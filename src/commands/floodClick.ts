@@ -7,12 +7,12 @@ export const run = (ext: Extension, args: String[], from: String) => {
     if (!ext.state.clickFlood) {
         ext.state.clickFlood = true;
         ext.state.selectingUser = true;
-        sendNotification(`Now select the user you want to flood`, from)
+        sendNotification(`Agora selecione o usuario para floodar.`, from)
     } else if (ext.state.clickFlood) {
         ext.state.clickFlood = false;
         ext.state.selectedUser = undefined;
         clearInterval(clickFloodInterval);
-        sendNotification("Disabled floodclick", from)
+        sendNotification("Floodclick desabilitado.", from)
     }
 };
 
