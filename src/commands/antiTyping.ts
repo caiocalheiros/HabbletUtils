@@ -3,7 +3,7 @@ import { sendNotification } from "../utils"
 
 export const run = (ext: Extension, args: String[], from: String) => {
     ext.state.antiTyping = !ext.state.antiTyping
-    sendNotification(`${ext.state.antiTyping ? 'Enabled' : 'Disabled'} ${config.name}`, from)
+    sendNotification(`${ext.state.antiTyping ? 'Habilitado' : 'Desabilitado'} ${config.name}`, from)
 }
 
 export const config = {
