@@ -15,11 +15,11 @@ export const run = (ext: Extension, args: String[], from: String) => {
             }
         }, 50)
 
-        sendNotification(`Enabled stay at x: ${stayPos.x} y: ${stayPos.y}`, from)
+        sendNotification(`Stay habilitado em x: ${stayPos.x} y: ${stayPos.y}`, from)
     } else {
         clearInterval(stayInterval)
         ext.state.stay = false
-        sendNotification(`Disabled stay`, from)
+        sendNotification(`Stay desabilitado`, from)
     }
 }
 
