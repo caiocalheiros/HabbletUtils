@@ -3,7 +3,7 @@ import { sendNotification } from "../utils"
 
 export const run = (ext: Extension, args: String[]) => {
     ext.state.antiSpam = !ext.state.antiSpam
-    sendNotification(`${ext.state.antiSpam ? "Enabled" : "Disabled"} antispam`)
+    sendNotification(`${ext.state.antiSpam ? "Habilitado" : "Desabilitado"} antispam`)
 }
 
 export const config = {
