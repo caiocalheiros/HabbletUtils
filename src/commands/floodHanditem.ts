@@ -12,7 +12,7 @@ export const run = (ext: Extension, args: String[], from: String) => {
         ext.state.handItemFlood = false;
         ext.state.selectedUser = undefined;
         clearInterval(handitemFloodInterval);
-        sendNotification("Disabled handitem flood", from)
+        sendNotification("Flood de handitem desabilitado.", from)
     }
 };
 
