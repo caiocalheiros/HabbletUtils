@@ -7,7 +7,7 @@ export const run = (ext: Extension, args: String[], from: String) => {
     if (!ext.state.handItemFlood) {
         ext.state.handItemFlood = true;
         ext.state.selectingHandItemFurni = true
-        sendNotification(`Now select the furni that give you the handitem`, from)
+        sendNotification(`Agora selecione o mobi que lhe dá o handitem`, from)
     } else if (ext.state.handItemFlood) {
         ext.state.handItemFlood = false;
         ext.state.selectedUser = undefined;
