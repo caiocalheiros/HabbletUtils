@@ -3,7 +3,7 @@ import { sendNotification } from "../utils"
 
 export const run = (ext: Extension, args: String[], from: String) => {
     ext.state.antiTurn = !ext.state.antiTurn
-    sendNotification(`${ext.state.antiTurn ? 'Enabled' : 'Disabled'} ${config.name}`, from)
+    sendNotification(`${ext.state.antiTurn ? 'Habilitado' : 'Desabilitado'} ${config.name}`, from)
 }
 
 export const config = {
