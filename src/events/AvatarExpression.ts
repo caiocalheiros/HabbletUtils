@@ -10,7 +10,7 @@ export const run = async (ext: Extension , hMessage: HMessage) => {
     await delay(10)
     ext.sendToServer(new HPacket(`{out:AvatarExpression}{i:4}`))
 
-    sendNotification(`Restored you from afk`)
+    sendNotification(`Restaurado do afk`)
 }
 
 function delay(ms: number) {

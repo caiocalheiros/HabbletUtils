@@ -37,7 +37,7 @@ export const run = (ext: Extension , hMessage: HMessage) => {
     const user = ext.roomUsers.find(user => user.id === id)
 
     if (!user) {
-        return sendNotification(`bloqueei seu clique, mas não consigo encontrar o usuário na minha lista de usuários, reentre na sala para consertar`)
+        return sendNotification(`bloqueei seu click, mas não consigo encontrar o usuário na minha lista de usuários, reentre na sala para consertar`)
     } else if (user.id === ext.userObject.id) return;
 
     hMessage.blocked = true;
