@@ -2,6 +2,8 @@ import { Extension, HDirection, HMessage, HPacket } from "gnode-api"
 import { sendNotification } from "../utils/habbo/notify";
 import { setClickFloodInterval } from "../commands/floodClick";
 import { setHanditemFloodInterval } from "../commands/floodHanditem";
+import { setRequestFriendInterval } from "../commands/requestFriend";
+import { setAcceptFriendInterval } from "../commands/requestaccFriend";
 
 export const run = (ext: Extension , hMessage: HMessage) => {
     const packet = hMessage.getPacket()
@@ -29,6 +31,23 @@ export const run = (ext: Extension , hMessage: HMessage) => {
             }, 75)
             setHanditemFloodInterval(int)
             sendNotification(`Habilitado flood de handitem ${user ? `em ${user.name}` : "mas notei que roomUsers está vazio, reentre na sala para consertar"}`)
+        } else if (ext.state.requestFriend){
+            let int = setInterval(() => {
+                if (ext.state.selectedUser && ext.state.requestFriend && user){
+                    ext.sendToServer(new HPacket(`{out:RequestFriend}{s:"${user.name}"}`))
+                }
+            }, 100);
+            setRequestFriendInterval(int)
+            sendNotification(`Habilitado friend spam ${user ? `em ${user.name}` : "mas notei que roomUsers está vazio, reentre na sala para consertar"}`)
+        }else if (ext.state.acceptFriend){
+            let int = setInterval(() => {
+                if (ext.state.selectedUser && ext.state.acceptFriend){
+                    ext.sendToServer(new HPacket(`{out:AcceptFriend}{i:1}{i:${ext.state.selectedUser}}`))
+                    ext.sendToServer(new HPacket(`{out:RemoveFriend}{i:1}{i:${ext.state.selectedUser}}`))
+                }
+            }, 100);
+            setAcceptFriendInterval(int)
+            sendNotification(`Habilitado accept friend spam ${user ? `em ${user.name}` : "mas notei que roomUsers está vazio, reentre na sala para consertar"}`)
         }
     }
 
