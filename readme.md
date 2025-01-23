@@ -24,6 +24,8 @@ HabbleUtils é uma extensão do [G-Earth](https://github.com/UnfamiliarLegacy/G-
 - Stay
 - Flood Click
 - Flood Hand Item
+- Up Camera Achievement
+- Up Friend Achievement
 
 ## Installation
 1. Baixe a ultima versão do [G-Earth](https://github.com/UnfamiliarLegacy/G-Earth "G-Earth")
